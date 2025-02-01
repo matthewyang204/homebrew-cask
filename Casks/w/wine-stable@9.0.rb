@@ -1,4 +1,4 @@
-cask "wine-stable" do
+cask "wine-stable@9.0" do
   version "9.0_3"
   sha256 "e352befbd159225d4ef7c45ad90ccc4efb9797bd4e842f99036a32e850d1b3de"
 
