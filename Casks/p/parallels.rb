@@ -1,6 +1,6 @@
 cask "parallels" do
-  version "20.2.0-55872"
-  sha256 "a0e8a56c5e4ccd9c595cd550600a7f271c8c55d334a25b46f2919fcf3b10d646"
+  version "20.2.2-55879"
+  sha256 "3204e8516f47e0d5a363ec81c53aa0f7067654335b6c3bb4b487877066713e43"
 
   url "https://download.parallels.com/desktop/v#{version.major}/#{version}/ParallelsDesktop-#{version}.dmg"
   name "Parallels Desktop"
@@ -52,6 +52,13 @@ cask "parallels" do
   end
 
   uninstall signal: ["TERM", "com.parallels.desktop.console"],
+            # This will stop parallels desktop if running in background.
+            # 'TERM' signal and 'quit:' does not work if parallels desktop is running in background.
+            script: {
+              executable:   "/usr/bin/pkill",
+              args:         ["-TERM", "prl_client_app"],
+              must_succeed: false,
+            },
             delete: [
               "/Library/Preferences/Parallels",
               "/usr/local/bin/prl_convert",

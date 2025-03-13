@@ -1,6 +1,6 @@
 cask "font-lxgw-simxihei" do
-  version "1.008.2"
-  sha256 "52861de20bfd6b31ded4a0792951b3aed8fbdf655edc35ba550541fae7d67978"
+  version "1.011"
+  sha256 "30b2486b082c35c62702503fa97f371f8e9bb908108bc28f1a3b20b9d8afc1bc"
 
   url "https://github.com/lxgw/SimXiZhi/releases/download/v#{version}/SimXiHei.ttf"
   name "LXGW SimXiHei"

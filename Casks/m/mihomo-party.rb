@@ -1,10 +1,11 @@
 cask "mihomo-party" do
   arch arm: "arm64", intel: "x64"
 
-  on_catalina do
-    version "1.6.0"
-    sha256 arm:   "e80d37a6479b63113e0f6de09a86990ef924f2e5a2d499e1eb95b09369271266",
-           intel: "a46fc749b23c65f2f295983637ab800b66d79ce3f60da4e5bd1ec7f2aae62052"
+  version "1.7.2"
+
+  on_catalina :or_older do
+    sha256 arm:   "778d4b84330be9c9c386a0ff4fc00a6677adf5fb8e1fa47e3f88850a34d490cd",
+           intel: "206153e1b7fbad51059084cd3f114681724df9c08bd384439bf44a9a6aa3b1d1"
 
     url "https://github.com/mihomo-party-org/mihomo-party/releases/download/v#{version}/mihomo-party-catalina-#{version}-#{arch}.pkg",
         verified: "github.com/mihomo-party-org/mihomo-party/releases/download/"
@@ -12,9 +13,8 @@ cask "mihomo-party" do
     pkg "mihomo-party-catalina-#{version}-#{arch}.pkg"
   end
   on_big_sur :or_newer do
-    version "1.6.0"
-    sha256 arm:   "fc97e86b73fdc2ae6a6827618d565dc4a9c97606139050bc6d263999cc49e28f",
-           intel: "3dc5653bc8a34249b986e6c74b6dab732b7c930bcf325749a68f565ef7ca7b78"
+    sha256 arm:   "9cfadb3e29265c6a84b47dda1aba0327d7413aa1bf4d7b7e2861f7536c69f155",
+           intel: "634cfbee97c2fe10c95ba2f2e246f22ad4f0df19f180e98b05edde05cb066747"
 
     url "https://github.com/mihomo-party-org/mihomo-party/releases/download/v#{version}/mihomo-party-macos-#{version}-#{arch}.pkg",
         verified: "github.com/mihomo-party-org/mihomo-party/releases/download/"
@@ -33,7 +33,8 @@ cask "mihomo-party" do
 
   depends_on macos: ">= :catalina"
 
-  uninstall pkgutil: "party.mihomo.app"
+  uninstall launchctl: "party.mihomo.helper",
+            pkgutil:   "party.mihomo.app"
 
   zap trash: "~/Library/Application Support/mihomo-party"
 end

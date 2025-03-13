@@ -1,9 +1,9 @@
 cask "oso-cloud" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.25.0"
-  sha256 arm:   "9d6bc6b2ba4406672dec6597e92a2a6ee7b5f9369e940ff21a2927f488b2436c",
-         intel: "f6bed14abff0121cb4398c36fe770ee87f6c03f734ab35af158f80b82863afaa"
+  version "0.27.1"
+  sha256 arm:   "676e0107396d4c3374b698b73cdaf22af45a3a6b03f2471f4eabb3669acee3b8",
+         intel: "36e0f6839815664c3cda600376b99c4b443d5a9c24577375d4d421bf1c21ba69"
 
   url "https://d3i4cc4dqewpo9.cloudfront.net/#{version}/oso_cli_mac_osx_#{arch}",
       verified: "d3i4cc4dqewpo9.cloudfront.net/"
@@ -12,8 +12,8 @@ cask "oso-cloud" do
   homepage "https://www.osohq.com/docs/app-integration/client-apis/cli"
 
   livecheck do
-    url "https://www.osohq.com/docs/changelog/oso-cloud-cli"
-    regex(/>\s*v?(\d+(?:\.\d+)+)\s*</i)
+    url "https://d3i4cc4dqewpo9.cloudfront.net/latest/version"
+    regex(/v?(\d+(?:\.\d+)+)/i)
   end
 
   binary "oso_cli_mac_osx_#{arch}", target: "oso-cloud"

@@ -1,6 +1,6 @@
 cask "qt-creator@dev" do
-  version "16.0.0-beta1"
-  sha256 "1101eca36a8ab5982417f836489df138b7a5f6ded3684ee843915d1182d6549a"
+  version "16.0.0-rc1"
+  sha256 "5fbd1a3c304c37d7e41ab297e143194b64776683ae1aa4d59ce7ad169a369557"
 
   url "https://download.qt.io/development_releases/qtcreator/#{version.major_minor}/#{version}/qt-creator-opensource-mac-x86_64-#{version}.dmg"
   name "Qt Creator Dev"

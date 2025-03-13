@@ -1,6 +1,6 @@
 cask "vitalsource-bookshelf" do
-  version "10.5.3.2801"
-  sha256 "628ca7b181932414a529680f9e0e009f0661e724de376ddc188b67c3bb9f8405"
+  version "11.0.2.3177"
+  sha256 "8e6dab2d530cc14081a7710c77c28d876e2a83367a7a16ec3b96cc379c6b39b6"
 
   url "https://downloads.vitalbook.com/vsti/bookshelf/#{version.major_minor_patch}/mac/bookshelf/VitalSource-Bookshelf_#{version}.dmg",
       verified: "downloads.vitalbook.com/vsti/bookshelf/"
@@ -13,7 +13,7 @@ cask "vitalsource-bookshelf" do
     regex(/href=.*?VitalSource[._-]Bookshelf[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "VitalSource Bookshelf.app"
 

@@ -1,18 +1,20 @@
 cask "publii" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "0.46.3"
-  sha256 arm:   "70f4b068a429e9563c2f2eab219b12746eb5328ce3b83af5e84b24f0b31c2c16",
-         intel: "ee17f9df32c4ad2675c11ba805b929c050217be4f9e0eda8ebffe7f4b8593ffd"
+  version "0.46.4,17047"
+  sha256 :no_check # required as upstream package is updated in-place
 
-  url "https://getpublii.com/download/Publii-#{version}-#{arch}.dmg"
+  url "https://getpublii.com/download/Publii-#{version.csv.first}-#{arch}.dmg"
   name "Publii"
   desc "Static website generator"
   homepage "https://getpublii.com/"
 
   livecheck do
     url "https://getpublii.com/download/"
-    regex(/href=.*?Publii[._-]v?(\d+(?:\.\d+)+)(?:[._-]#{arch})?\.dmg/i)
+    regex(/\(build\s+(\d+)\).*?href=["']?[^"' >]*?Publii[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/im)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| "#{match[1]},#{match[0]}" }
+    end
   end
 
   app "Publii.app"

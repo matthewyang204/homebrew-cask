@@ -1,6 +1,6 @@
 cask "mendeley-reference-manager" do
-  version "2.129.0"
-  sha256 "ffa325415b7ce0d2670d19a69d9cb45535b832023d0c24ba825c406e06eae54f"
+  version "2.131.0"
+  sha256 "660cfe9d538f6c53fb56fe4a90b8ac2d4f97b96a2770d51e1a73ae5319902a13"
 
   url "https://static.mendeley.com/bin/desktop/mendeley-reference-manager-#{version}-x64.dmg"
   name "Mendeley Reference Manager"
@@ -8,8 +8,8 @@ cask "mendeley-reference-manager" do
   homepage "https://www.mendeley.com/download-reference-manager/macOS/"
 
   livecheck do
-    url "https://static.mendeley.com/bin/desktop/latest-mac.yml"
-    strategy :electron_builder
+    url :homepage
+    regex(/href=.*?mendeley-reference-manager[._-]v?(\d+(?:\.\d+)+)(?:[._-]x64)?\.dmg/i)
   end
 
   depends_on macos: ">= :high_sierra"

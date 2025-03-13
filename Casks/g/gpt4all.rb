@@ -1,6 +1,6 @@
 cask "gpt4all" do
-  version "3.8.0"
-  sha256 "31ab757879bf239b56350e802ab10a5ac9a98106cac1537fb94e3e228c7b7c1d"
+  version "3.10.0"
+  sha256 "d0d98ab465de516af6d50fc013abbf9a8967274f2d171bbf69198873ce255b5f"
 
   url "https://github.com/nomic-ai/gpt4all/releases/download/v#{version}/gpt4all-installer-macos-v#{version}.dmg",
       verified: "github.com/nomic-ai/gpt4all/"

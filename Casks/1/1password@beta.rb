@@ -1,9 +1,9 @@
 cask "1password@beta" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "8.10.60-4.BETA"
-  sha256 arm:   "db06262c8c6f50396a2ab0ac4a623fc82a0d3ab30480f75fac7247330158932a",
-         intel: "94e423b972c208117596613090badf5fc3e3970c31e7001ae5604375feb45674"
+  version "8.10.68-12.BETA"
+  sha256 arm:   "504ae9de97125f3fc2e6cdc9ada2e804df3db4bf208602775cba60ecab54f127",
+         intel: "5ef7e546aa94239f5e92e4a2417c800b34bde1522b97cc098de9a2d310339d95"
 
   url "https://downloads.1password.com/mac/1Password-#{version}-#{arch}.zip"
   name "1Password"
@@ -12,7 +12,7 @@ cask "1password@beta" do
 
   livecheck do
     url "https://app-updates.agilebits.com/product_history/OPM#{version.major}"
-    regex(%r{href=.*?/1Password[._-]?v?(\d+(?:.\d+)*(?:[._-]BETA))[._-]?\$ARCH\.zip}i)
+    regex(%r{href=.*?/1Password[._-]?v?(\d+(?:[.-]\d+)*(?:[._-]BETA))[._-]?\$ARCH\.zip}i)
   end
 
   auto_updates true
@@ -20,7 +20,7 @@ cask "1password@beta" do
     "1password",
     "1password@nightly",
   ]
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "1Password.app"
 

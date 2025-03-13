@@ -1,6 +1,6 @@
 cask "mullvad-browser" do
-  version "14.0.4"
-  sha256 "ce907ea074183d20fee0b7dde02f443a5e352f9187ebf502e871aef6dd9dfe47"
+  version "14.0.7"
+  sha256 "1796ec900ae87fe81c9241c66f6580e118d658590b336db47279bef5bc30ce52"
 
   url "https://cdn.mullvad.net/browser/#{version}/mullvad-browser-macos-#{version}.dmg"
   name "Mullvad Browser"

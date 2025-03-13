@@ -1,6 +1,6 @@
 cask "j" do
-  version "9.5.2"
-  sha256 "78efb1db5423939e776f0053ff074a5c641b376e0517ded04773e38c001609c5"
+  version "9.6.2"
+  sha256 "1b78ff273337434cc4b52d44643c932274bc9761b39ccfc0465502723ca04f1a"
 
   url "https://www.jsoftware.com/download/j#{version.major_minor}/install/j#{version}_mac64.zip"
   name "J"
@@ -60,4 +60,13 @@ cask "j" do
   # Not actually necessary, since it would be deleted anyway.
   # It is present to make clear an uninstall was not forgotten and that for this cask it is indeed this simple.
   uninstall delete: "#{staged_path}/#{token}"
+
+  zap trash: [
+    "~/Library/Application Support/j",
+    "~/Library/Caches/com.jsoftware.jqt",
+    "~/Library/Caches/j",
+    "~/Library/Preferences/com.jsoftware.jqt.plist",
+    "~/Library/Preferences/jqt.ini",
+    "~/Library/Saved Application State/com.jsoftware.jqt.savedState",
+  ]
 end

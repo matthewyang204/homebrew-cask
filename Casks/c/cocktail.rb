@@ -55,13 +55,13 @@ cask "cocktail" do
       url "https://www.maintain.se/downloads/Cocktail#{version.major}VE.dmg"
     end
     on_sonoma do
-      version "17.8"
+      version "17.9"
       sha256 :no_check
 
       url "https://www.maintain.se/downloads/Cocktail#{version.major}SE.dmg"
     end
     on_sequoia :or_newer do
-      version "18.2.3"
+      version "18.3.1"
       sha256 :no_check
 
       url "https://www.maintain.se/downloads/Cocktail#{version.major}SE.dmg"

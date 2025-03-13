@@ -1,6 +1,6 @@
 cask "rsyncui" do
-  version "2.3.2"
-  sha256 "e2dca107c82dbe292ccc0c37260644da890ee66b1b3ac0c11be5819af2a6f785"
+  version "2.3.9"
+  sha256 "580d1223032c0b36ecc71893e46b2a98dc7762ba1c8b606c0a705a285dcc2876"
 
   url "https://github.com/rsyncOSX/RsyncUI/releases/download/v#{version}/RsyncUI.#{version}.dmg"
   name "RsyncUI"

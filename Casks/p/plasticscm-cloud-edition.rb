@@ -1,6 +1,6 @@
 cask "plasticscm-cloud-edition" do
-  version "11.0.16.9143"
-  sha256 "4fe7fe2a29e686e02465679bd34905f7e8749fa0de51b35b2debc54675d5a999"
+  version "11.0.16.9243"
+  sha256 "d3aa1a3e35d66508af75d913339bacc3469197812c460e116217e53f87cee7c1"
 
   url "https://d26z97tczqnlef.cloudfront.net/releases/#{version}/plasticscm/osx/unity-vcs-#{version}-mac.pkg.zip",
       verified: "d26z97tczqnlef.cloudfront.net/"
@@ -9,8 +9,8 @@ cask "plasticscm-cloud-edition" do
   homepage "https://www.plasticscm.com/"
 
   livecheck do
-    url "https://www.plasticscm.com/download/releasenotes/"
-    regex(/plastic\sscm\s-\srelease\snotes\s-\s(\d+(?:\.\d+)+)/i)
+    url "https://www.plasticscm.com/download"
+    regex(%r{href=.*?/download/v?(\d+(?:\.\d+)+)/plasticscm/[^/]+/cloudedition}i)
   end
 
   pkg "unity-vcs-#{version}.pkg"

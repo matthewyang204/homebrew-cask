@@ -1,29 +1,21 @@
 cask "dotnet@preview" do
   arch arm: "arm64", intel: "x64"
 
-  on_arm do
-    version "9.0.1,94c702e9-6334-4f72-814b-4a26d492771e,b583daf604626c9dfeee7ab5f5bb5c14"
-    sha256 "019ddba2e6bddc30dd059e192440774cfc3746cdb6b06411dd327c09b86d0d92"
-  end
-  on_intel do
-    version "9.0.1,e71b09a9-de09-4641-84f5-d8f0a2220874,57d2fdfabe715eccb6a38fceb712b6a2"
-    sha256 "0966b809639f3f57c653134bcc9d813d5390f6946715f978a11db7bdd3d46fc9"
-  end
+  version "9.0.3"
+  sha256 arm:   "f570de8321c1ba521940b09828e40b121dd606cfeaa760a7668738421f22b790",
+         intel: "11498361d138d65a7bc5a26d0ce92cce44a6b7ad66530a7dc6eda2d6b2589329"
 
-  url "https://download.visualstudio.microsoft.com/download/pr/#{version.csv.second}/#{version.csv.third}/dotnet-runtime-#{version.csv.first}-osx-#{arch}.pkg"
+  url "https://builds.dotnet.microsoft.com/dotnet/Runtime/#{version}/dotnet-runtime-#{version}-osx-#{arch}.pkg"
   name ".Net Runtime"
   desc "Developer platform"
   homepage "https://dotnet.microsoft.com/en-us/"
 
   livecheck do
     url "https://builds.dotnet.microsoft.com/dotnet/release-metadata/#{version.major_minor}/releases.json"
-    regex(%r{/download/pr/([^/]+)/([^/]+)/dotnet-runtime[._-]v?(.+)[._-]osx[._-]#{arch}\.pkg}i)
-    strategy :json do |json, regex|
+    strategy :json do |json|
       json["releases"]&.map do |release|
-        release.dig("runtime", "files")&.map do |file|
-          file["url"]&.scan(regex)&.map { |match| "#{match[2]},#{match[0]},#{match[1]}" }
-        end
-      end&.flatten
+        release.dig("runtime", "version")
+      end
     end
   end
 

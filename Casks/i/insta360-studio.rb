@@ -1,6 +1,6 @@
 cask "insta360-studio" do
-  version "5.5.0,97c6576afb0adb8b9affbe8e635614a9,release_insta360,RC_build46,_20250120_121455_signed_1737346578362"
-  sha256 "edfc8cc311973bdb4fd2f3170f53999d1a1c62b397fd959107a32971baf1098d"
+  version "5.5.3,49c84d76745f5ec59a0afbea2bd7eb7f,beta1_insta360,RC_build17,_20250312_220905_signed_1741788638173"
+  sha256 "7f97057e4b321fded77d246d47a58f2b2540df18f7a9681eb7f14cbf46d26939"
 
   url "https://file.insta360.com/static/#{version.csv.second}/Insta360Studio_#{version.csv.first}_#{version.csv.third}(#{version.csv.fourth})#{version.csv.fifth}.pkg"
   name "Insta360 Studio"
@@ -45,7 +45,7 @@ cask "insta360-studio" do
   uninstall quit:    "com.insta360.studio",
             pkgutil: [
               "com.insta360.insta360Studio",
-              "com.insta360.PremierePlugin",
+              "com.insta360.PremierePluginV2",
               "com.insta360.ThumbnailPlugin",
             ]
 

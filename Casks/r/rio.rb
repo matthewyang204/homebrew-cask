@@ -1,8 +1,8 @@
 cask "rio" do
-  version "0.2.5"
-  sha256 "06947898722e7c7316466216016eab871b59bc1069e48c9fdb58476af7e7cc46"
+  version "0.2.10"
+  sha256 "bd90e392ced54daec19d81fd4ba26f65c1edd207956fd5cb43d4de5b7caac8de"
 
-  url "https://github.com/raphamorim/rio/releases/download/v#{version}/Rio-v#{version}.dmg"
+  url "https://github.com/raphamorim/rio/releases/download/v#{version}/rio.dmg"
   name "Rio"
   desc "Hardware-accelerated GPU terminal emulator"
   homepage "https://github.com/raphamorim/rio/"

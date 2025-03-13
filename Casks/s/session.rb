@@ -1,9 +1,9 @@
 cask "session" do
-  version "1.14.3"
-  sha256 "66b8d5c77efb04a381520d3c7f7ec24a70f5ae803ddc76031519ed6d2f3132f8"
+  version "1.15.0"
+  sha256 "bf78a795e8ccbd5f2913368c7bd1a393c66d9f800e5ce7c3cdaaa1b3bff4eefc"
 
-  url "https://github.com/oxen-io/session-desktop/releases/download/v#{version}/session-desktop-mac-x64-#{version}.dmg",
-      verified: "github.com/oxen-io/session-desktop/"
+  url "https://github.com/session-foundation/session-desktop/releases/download/v#{version}/session-desktop-mac-x64-#{version}.dmg",
+      verified: "github.com/session-foundation/session-desktop/"
   name "Session"
   desc "Onion routing based messenger"
   homepage "https://getsession.org/"
@@ -13,7 +13,7 @@ cask "session" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :ventura"
 
   app "Session.app"
 

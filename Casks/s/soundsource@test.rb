@@ -1,21 +1,21 @@
 cask "soundsource@test" do
-  version "5.7.6,7,20250130,1415"
-  sha256 "a35a45158a2f151666d45e710e7caa9eba6058a77114ac72f7d60b6437aca7d3"
+  version "5.7.6,16,20250224,1333,5767010"
+  sha256 "1d33036c372663b7b3a51eaaf1e29e757f75258a59318409993b522f9d5d4487"
 
-  url "https://download.rogueamoeba.com/builds/SoundSource/SoundSource_#{version.csv.first.no_dots}700#{version.csv.second}_#{version.csv.third}_#{version.csv.fourth}.zip"
+  url "https://download.rogueamoeba.com/builds/SoundSource/SoundSource_#{version.csv.fifth}_#{version.csv.third}_#{version.csv.fourth}.zip"
   name "SoundSource"
   desc "Sound and audio controller"
   homepage "https://rogueamoeba.com/soundsource/"
 
   # The livecheck uses a hard-coded system version number in the url that corresponds to the latest macOS version
   livecheck do
-    url "https://rogueamoeba.net/ping/versionCheck.cgi?format=sparkle&system=150&wantsTestReleases=true&bundleid=com.rogueamoeba.soundsource&platform=osx&version=#{version.csv.first.no_dots}700#{version.csv.second}"
-    regex(/SoundSource[._-]v?(?:\d+)[._-](\d+)[._-](\d+)\.zip/i)
+    url "https://rogueamoeba.net/ping/versionCheck.cgi?format=sparkle&system=150&wantsTestReleases=true&bundleid=com.rogueamoeba.soundsource&platform=osx&version=#{version.csv.fifth}"
+    regex(/SoundSource[._-]v?(\h+)[._-](\d+)[._-](\d+)\.zip/i)
     strategy :sparkle do |item, regex|
       match = item.url&.match(regex)
       next if match.blank?
 
-      "#{item.version.sub("fc", ",")},#{match[1]},#{match[2]}"
+      "#{item.version.sub("fc", ",")},#{match[2]},#{match[3]},#{match[1]}"
     end
   end
 

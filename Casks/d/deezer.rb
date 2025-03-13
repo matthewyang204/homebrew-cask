@@ -1,15 +1,15 @@
 cask "deezer" do
-  version "7.0.10"
-  sha256 "d49de0f34477fba301db8842f0c536112008b1e26959b65d040033e3d257972b"
+  version "7.0.31"
+  sha256 "f1f1ec928481f664188beea3ac45d4f2825aba06528e0e40b9aaa323fdc88e5e"
 
-  url "https://www.deezer.com/desktop/download/artifact/darwin/x64/#{version}"
+  url "https://www.deezer.com/desktop/download/artifact-darwin-x64-#{version}"
   name "Deezer"
   desc "Music player"
   homepage "https://www.deezer.com/download"
 
   livecheck do
-    url "https://www.deezer.com/desktop/download?platform=darwin&architecture=x64"
-    strategy :header_match
+    url "https://www.deezer.com/desktop/update/latest.yml?architecture=x64&platform=darwin&platformVersion=99"
+    strategy :electron_builder
   end
 
   auto_updates true

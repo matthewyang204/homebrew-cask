@@ -56,8 +56,8 @@ cask "microsoft-outlook" do
     end
   end
   on_ventura :or_newer do
-    version "16.93.25011212"
-    sha256 "5844db895182f8f26a93a1da2c610f50cd3e2c70d895c9b822b03dbd3ba57ddc"
+    version "16.95.25030928"
+    sha256 "310dd88039fdf01d1dbb6ef5ab9e3cd51c2fdd4b5c14ae42ea03fa4ee9548419"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525137"

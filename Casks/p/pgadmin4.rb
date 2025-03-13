@@ -1,9 +1,9 @@
 cask "pgadmin4" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "8.14"
-  sha256 arm:   "176b07fa00af22d161c1054ae6df8445e1aec40872294ced339265d7bb85e588",
-         intel: "f30f5558fd07c6b5db6a0eb841de036c74b08ef06b123b3c0e70198efebc3ce4"
+  version "9.1"
+  sha256 arm:   "3e46485f747ffbf7a8474a652efbf1bdc035ebde176bc2df90a1f445ff34c885",
+         intel: "447f17d5d63e74e87338f1b6d22f9b972cb5af18cf17e3d93dcfd0a0b2a7f930"
 
   url "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v#{version}/macos/pgadmin4-#{version}-#{arch}.dmg",
       verified: "ftp.postgresql.org/pub/pgadmin/pgadmin4/"
@@ -12,8 +12,8 @@ cask "pgadmin4" do
   homepage "https://www.pgadmin.org/"
 
   livecheck do
-    url "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https://www.pgadmin.org/download/pgadmin-4-macos/"
+    regex(%r{href=.*?/pgadmin4/v?(\d+(?:\.\d+)+)/macos/?["' >]}i)
   end
 
   app "pgAdmin 4.app"

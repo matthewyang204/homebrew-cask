@@ -1,9 +1,9 @@
 cask "cables" do
   arch arm: "-arm64", intel: "-x64"
 
-  version "0.5.5"
-  sha256 arm:   "52439be9cbe013b50106d993b4721500cb5bd0056634f11ee1ad08b8e3f38e79",
-         intel: "2e742b4fdd6e4341585a719f19c92cef57c01b3c8a89c9dafcf931a52d695f6a"
+  version "0.5.9"
+  sha256 arm:   "b28f88c70195c159ea5b4e6691ba1c7289099d4eae83ade77b1e7f58adac6aaa",
+         intel: "55c7777a3064656cc60fb391d52031f42ae8000ebd70ce184e36fc10c291b4d3"
 
   url "https://github.com/cables-gl/cables_electron/releases/download/v#{version}/cables-#{version}-mac#{arch}.dmg"
   name "Cables"

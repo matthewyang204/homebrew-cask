@@ -64,12 +64,12 @@ cask "coteditor" do
     end
   end
   on_sonoma :or_newer do
-    version "5.0.8"
-    sha256 "1f0773115410510cc0074b01110260a03788e4a00c059eb7dd855b09226f3b17"
+    version "5.1.1"
+    sha256 "6628b1c2a5852f7cc76799c47705c14469096e2cc24bd4fac5fd0488fcf236f2"
 
     livecheck do
-      url "https://coteditor.com/appcast.xml"
-      strategy :sparkle, &:short_version
+      url :url
+      strategy :github_latest
     end
   end
 
